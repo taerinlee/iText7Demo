@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Application for employment</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Application for employment</h1>
+    <form action="#" th:action="@{/joinForm}" th:object="${member}" method="post">
+    	<p>Full name: <input type="text" th:field="*{name}"  style="with:800px;"/></p>
+    	<p>Native language: 
+	    	<input type="radio" value="English" name="language"><label for="English">English</label>
+	    	<input type="radio" value="French" name="language"><label for="French">French</label>
+	    	<input type="radio" value="German" name="language"><label for="German">German</label>
+	    	<input type="radio" value="Russian" name="language"><label for="Russian">Russian</label>
+	    	<input type="radio" value="Spanish" name="language"><label for="Spanish">Spanish</label>
+	    </p>
+    	<p>Experience in: 
+	    	<input type="checkbox" value="cooking" name="experience"><label for="cooking">Cooking</label>
+	    	<input type="checkbox" value="driving" name="experience"><label for="driving">Driving</label>
+	    	<input type="checkbox" value="software development" name="experience"><label for="software development">Software development</label>
+	     </p>
+    	<p>Preferred working shift: 
+    		<select name="shift">
+			  <option value="Any">Any</option>
+			  <option value="6.30 am - 2.30 pm">6.30 am - 2.30 pm</option>
+			  <option value="1.30 pm - 9.30 pm">1.30 pm - 9.30 pm</option>
+			</select>
+		</p>
+        <p>Additional information: <input type="text" th:field="*{information}" style="with:700px; height:100px;"/></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+</body>
+</html>

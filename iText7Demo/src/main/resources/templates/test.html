@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+ 
+</head>
+<body>
+	<h1>Result Test</h1>
+	
+  <div id="Context">
+    test
+  </div>
+ 
+  <script type="text/javascript">
+ 
+    function ajaxTest(){
+      $.ajax({
+        type : "GET",
+        url : "/confirmFlattenForm",
+        dataType : "text",
+        error : function() {
+          alert('Fail!!');
+        }, 
+        success : function(data) {
+          $('#Context').html(data);
+        }
+ 
+      });
+    }
+ 
+    ajaxTest();
+ 
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Application for employment</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Result</h1>
+    <p th:text="'Full name: ' + ${member.name}" />
+    <p th:text="'Native language: ' + ${member.language}" />
+    <p th:text="'Experience in: ' + ${member.experience}" />
+    <p th:text="'Preferred working shift: ' + ${member.shift}" />
+    <p th:text="'Additional information: ' + ${member.information}" />
+</body>
+</html>
