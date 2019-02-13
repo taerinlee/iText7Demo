@@ -8,16 +8,11 @@
 package hello;
 
 import com.itextpdf.barcodes.BarcodePDF417;
-import com.itextpdf.kernel.color.Color;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.pdf.PdfDocument;
-import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
-
-import org.junit.experimental.categories.Category;
-
-import java.io.File;
 
 public class BarcodePlacement {
 
@@ -29,9 +24,9 @@ public class BarcodePlacement {
     }
 
     // We've changed the order of arguments (in comparison with itext5 example) to make it more clear
-    public Image createBarcode(float mw, float mh, PdfDocument pdf) {
+    public static Image createBarcode(float mw, float mh, PdfDocument pdf) {
         BarcodePDF417 barcode = new BarcodePDF417();
         barcode.setCode("BarcodePDF417 barcode");
-        return new Image(barcode.createFormXObject(Color.BLACK, pdf)).scale(mw, mh);
+        return new Image(barcode.createFormXObject(ColorConstants.BLACK, pdf)).scale(mw, mh);
     }
 }
