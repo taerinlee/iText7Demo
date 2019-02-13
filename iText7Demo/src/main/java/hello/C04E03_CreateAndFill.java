@@ -84,6 +84,13 @@ public class C04E03_CreateAndFill {
         
         form.flattenFields();
         
+        try {
+			BarcodePlacement.manipulatePdf(pdf, doc);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
         doc.close();
 
     }
