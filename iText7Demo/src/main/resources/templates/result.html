@@ -29,10 +29,10 @@
 			<a href="/index" class="w3-button w3-block">Home</a>
 		</div>
 		<div class="w3-col s3">
-			<a href="/joinForm" class="w3-button w3-block">Join Form</a>
+			<a href="/joinForm" class="w3-button w3-block">Join (Online)</a>
 		</div>
 		<div class="w3-col s3">
-			<a href="/downView" class="w3-button w3-block">Download Form</a>
+			<a href="/downView" class="w3-button w3-block">Submit (Application)</a>
 		</div>
 		<div class="w3-col s3">
 			<a href="#" class="w3-button w3-block">Contact</a>
@@ -44,9 +44,9 @@
 	<div class="w3-panel">
 		<h1><svg class="logo" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 250 34.5" style=" width: 200px; "><path fill="#F99E27" d="M6.1 33.3c-.7.7-1.5 1-2.5 1s-1.8-.4-2.5-1c-.7-.7-1-1.5-1-2.5v-27c0-1 .4-1.8 1-2.5.7-.7 1.5-1 2.5-1s1.8.4 2.5 1c.7.7 1 1.5 1 2.5v27.1c.1.9-.3 1.7-1 2.4z"></path><path fill="#044A76" d="M66.8 1.2c.7.7 1 1.5 1 2.5s-.4 1.9-1 2.5c-.7.7-1.5 1-2.5 1H43.7v23.5c0 1-.4 1.9-1 2.5-.7.7-1.5 1-2.5 1s-1.9-.4-2.5-1c-.7-.7-1-1.5-1-2.5V7.3H16.5c-.9-.1-1.7-.5-2.3-1.2-.7-.7-.9-1.5-.9-2.5s.4-1.8 1-2.5c.7-.7 1.5-1 2.5-1h47.5c1 0 1.8.3 2.5 1.1zm121.1 26.4L170 17.3 187.9 7c.9-.5 1.5-1.3 1.7-2.2.3-1 .1-2-.4-2.8-.5-.9-1.3-1.5-2.3-1.7-1-.3-2-.1-2.9.4l-21.7 12.5L140.6.6c-.9-.5-1.9-.7-2.9-.4s-1.8.8-2.3 1.7c-.5.9-.7 1.8-.4 2.8.3 1 .9 1.7 1.7 2.2l17.9 10.3-17.9 10.3c-.9.5-1.5 1.3-1.7 2.2-.3 1-.1 2 .4 2.8.5.9 1.3 1.5 2.3 1.7s2 .1 2.9-.4l21.7-12.5L184 33.8c.9.5 1.9.7 2.9.4 1-.2 1.8-.8 2.3-1.7.5-.9.7-1.8.4-2.8-.3-.8-.9-1.6-1.7-2.1z"></path><path d="M125.1 7.3H77.5c-2 0-3.6-1.6-3.6-3.6S75.5.1 77.5.1h47.6c2 0 3.6 1.6 3.6 3.6.1 2-1.5 3.6-3.6 3.6zm0 27.1H77.5c-2 0-3.6-1.6-3.6-3.6s1.6-3.6 3.6-3.6h47.6c2 0 3.6 1.6 3.6 3.6.1 2-1.5 3.6-3.6 3.6zm0-13.6H77.5c-2 0-3.6-1.6-3.6-3.6s1.6-3.6 3.6-3.6h47.6c2 0 3.6 1.6 3.6 3.6.1 2-1.5 3.6-3.6 3.6z" fill="#F99E27"></path><path fill="#044A76" d="M249 1.2c.7.7 1 1.5 1 2.5s-.4 1.9-1 2.5c-.7.7-1.5 1-2.5 1H226v23.5c0 1-.4 1.9-1 2.5-.7.7-1.5 1-2.5 1s-1.9-.4-2.5-1c-.7-.7-1-1.5-1-2.5V7.3h-20c-.9-.1-1.7-.5-2.3-1.2-.7-.7-.9-1.5-.9-2.5s.4-1.8 1-2.5c.7-.7 1.5-1 2.5-1h47.5c.6 0 1.5.3 2.2 1.1z"></path></svg></h1>
 	</div>
-	<div style="padding: 0 0 30px 10px;margin: 0 20px;border: solid 1px #000;">
-		<h1 style="text-align: center;">Application for employment</h1>
-		<form action="#" th:action="@{/downXFAForm}" th:object="${member}" method="post">
+	<form action="#" th:action="@{/downXFAForm}" th:object="${member}" method="post">
+		<div style="padding: 0 0 30px 10px;margin: 0 20px;border: solid 1px #000;">
+			<h1 style="text-align: center;">Application for employment</h1>
 			<div><svg id="Layer_1" style="float: left; padding-right: 5px; width: 20px; enable-background:new 0 0 612 792;" version="1.1" viewBox="0 0 612 792" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">
 	.st0{fill:#41AD49;}
 </style><g><path class="st0" d="M562,396c0-141.4-114.6-256-256-256S50,254.6,50,396s114.6,256,256,256S562,537.4,562,396L562,396z    M501.7,296.3l-241,241l0,0l-17.2,17.2L110.3,421.3l58.8-58.8l74.5,74.5l199.4-199.4L501.7,296.3L501.7,296.3z"/></g></svg>
@@ -62,15 +62,16 @@
 				<input name="shift" th:value="${member.shift}" type="hidden"/>
 				<p th:text="'Your aditional information is ' + ${member.information} + '.'"/> 
 				<input name="information" th:value="${member.information}" type="hidden"/>
-				<input type="submit" value="Download Application Form"/>
+				
 			</div>
-		</form>
-	</div>
+		</div>
+		<input style="margin-left:20px; margin-top:10px;" type="submit" value="Download"/>
+	</form>
 </div>
 <!-- Footer -->
 <footer class="w3-container w3-padding-32 w3-light-grey w3-center">
 <p>
-	© 2019 iText Group nv (HQ Belgium), Inc. All rights reserved.
+	For more information, contact <a href="mailto:sales.isk@itextpdf.com">sales.isk@itextpdf.com</a>
 </p>
 </footer>
 </body>
