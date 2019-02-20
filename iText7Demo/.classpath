@@ -34,7 +34,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Dev/apache-maven-3.6.0/repository/com/itextpdf/kernel/7.1.6-SNAPSHOT/kernel-7.1.6-SNAPSHOT.jar"/>
-	<classpathentry kind="lib" path="C:/Dev/apache-maven-3.6.0/repository/com/itextpdf/io/7.1.6-SNAPSHOT/io-7.1.6-SNAPSHOT.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
