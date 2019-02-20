@@ -5,7 +5,7 @@
 
 */
 
-package hello;
+package com.itextpdf;
 
 import com.itextpdf.barcodes.BarcodePDF417;
 import com.itextpdf.kernel.colors.ColorConstants;
@@ -16,7 +16,7 @@ import com.itextpdf.layout.element.Paragraph;
 
 public class BarcodePlacement {
 
-    protected static void manipulatePdf(PdfDocument pdf, Document doc) throws Exception {
+	public static void manipulatePdf(PdfDocument pdf, Document doc) throws Exception {
         Image img = createBarcode(1, 1, pdf);
         doc.add(new Paragraph(String.format("This barcode measures %s by %s user units",
                 img.getImageScaledWidth(), img.getImageScaledHeight())));

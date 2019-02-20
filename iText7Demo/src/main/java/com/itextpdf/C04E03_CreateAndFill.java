@@ -9,15 +9,13 @@
 /*
  * This example is part of the iText 7 tutorial.
  */
-package hello;
+package com.itextpdf;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfFormField;
@@ -25,18 +23,21 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 
+import hello.Member;
+
 /**
  * Simple filling out form example.
  */
-@Controller
 public class C04E03_CreateAndFill {
 
-    public static final String DEST = "results/chapter04/create_and_fill.pdf";
+    public static final String DEST = "results/create_and_fill.pdf";
 
-    public static void confirmFlattenForm(@ModelAttribute Member member) throws IOException {
+    public static File confirmFlattenForm(@ModelAttribute Member member) throws IOException {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
         new C04E03_CreateAndFill().createPdf(DEST, member);
+        
+        return file;
     }
 
     public void createPdf(String dest, Member member) throws IOException {
@@ -82,15 +83,16 @@ public class C04E03_CreateAndFill {
         fields.get("shift").setValue(shift);
         fields.get("info").setValue(info);
         
-        form.flattenFields();
         
         try {
 			BarcodePlacement.manipulatePdf(pdf, doc);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         
+        C04E05_FlattenForm.manipulatePdf(dest, pdf);
+
+        form.flattenFields();
         doc.close();
 
     }

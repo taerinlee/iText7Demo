@@ -9,16 +9,10 @@
 /*
  * This example is part of the iText 7 tutorial.
  */
-package hello;
+package com.itextpdf;
 
 import java.io.File;
 import java.io.IOException;
-
-import org.springframework.core.io.Resource;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfButtonFormField;
@@ -35,19 +29,18 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.property.TextAlignment;
 
 /**
- * Simple widget annotation example.
+ * Simple filling out form example.
  */
-@Controller
 public class C04E02_JobApplication {
 
     public static final String DEST = "download-dir/job_application.pdf";
 	
-    @GetMapping("/downloadForm")
-    public String downloadForm(Model model) throws IOException {
+    public static File downloadForm() throws IOException {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
         new C04E02_JobApplication().createPdf(DEST);
-        return "uploadForm";
+        
+        return file;
     }
 
     public void createPdf(String dest) throws IOException {
